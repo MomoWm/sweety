@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { parseBill, parseKwh, parseCharge, parseSupplyRate, parseAccountNumber, parseUsageHistory, parseServiceAddress, detectProvider } from "./parser";
+import { parseBill, parseKwh, parseCharge, parseSupplyRate, parseAccountNumber, detectProvider } from "./parser";
 
 const jamesKing = `
 EVERSOURCE   ENERGY

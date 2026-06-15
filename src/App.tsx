@@ -27,9 +27,10 @@ import { AuthModal } from "./components/AuthModal";
 import { AccountControl } from "./components/AccountControl";
 import { UpgradeModal } from "./components/UpgradeModal";
 import { Settings } from "./components/Settings";
-import { getAccent, applyAccent } from "./lib/theme";
+import { getAccent, applyAccent, getTheme, toggleTheme } from "./lib/theme";
 import { LandingPage } from "./components/LandingPage";
 import { ClosingTools } from "./components/ClosingTools";
+import { BreakEven } from "./components/BreakEven";
 import { EmotionalClose } from "./components/EmotionalClose";
 import { SAMPLE_BILL } from "./lib/sample";
 import { useAuth } from "./lib/auth";
@@ -419,6 +420,13 @@ export default function App() {
                 <span className="hidden sm:inline">Settings</span>
               </button>
             )}
+            <button
+              onClick={() => toggleTheme()}
+              aria-label="Toggle dark mode"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-hair bg-snow/80 text-base transition hover:border-gold"
+            >
+              {getTheme() === "dark" ? "☀️" : "🌙"}
+            </button>
             <AccountControl onOpenAuth={() => setShowAuth(true)} />
           </div>
         </header>
@@ -623,6 +631,10 @@ export default function App() {
 
                 <div className="reveal">
                   <Calculator projection={projection} assumptions={assumptions} provider={provider} />
+                </div>
+
+                <div className="reveal">
+                  <BreakEven projection={projection} assumptions={assumptions} provider={provider} />
                 </div>
 
                 <div className="reveal">
