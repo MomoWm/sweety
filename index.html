@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1"
+    />
+    <meta name="theme-color" content="#F5F5F7" />
+    <script>
+      // Apply saved theme before paint (no flash of light mode).
+      try { if (localStorage.getItem("sunledger.theme") === "dark") document.documentElement.classList.add("dark"); } catch (e) {}
+    </script>
+
+    <!-- Sun favicon (inline, no file needed) -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Ctext%20y='.9em'%20font-size='90'%3E☀️%3C/text%3E%3C/svg%3E"
+    />
+
+    <!-- Add-to-Home-Screen name on iPhone/iPad -->
+    <meta name="apple-mobile-web-app-title" content="SunLedger" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+    <title>SunLedger — Instant Solar Savings Story</title>
+    <meta
+      name="description"
+      content="SunLedger — turn an electric bill into an instant, personalized 25-year solar savings story. Reads the bill on your device in seconds."
+    />
+
+    <!-- Link-preview card when the URL is shared (texts, social, etc.) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sunledger.vercel.app" />
+    <meta property="og:site_name" content="SunLedger" />
+    <meta property="og:title" content="SunLedger — Instant Solar Savings Story" />
+    <meta
+      property="og:description"
+      content="Turn any electric bill into an instant, personalized 25-year solar savings story — read on your device in seconds."
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="SunLedger — Instant Solar Savings Story" />
+    <meta
+      name="twitter:description"
+      content="Turn any electric bill into an instant 25-year solar savings story."
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
