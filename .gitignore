@@ -1,0 +1,47 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+logs/
+
+# Dependencies
+node_modules/
+vendor/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Environment / secrets
+.env
+.env.local
+*.local
+
+# Build output
+dist/
+build/
+out/
+*.tsbuildinfo
+
+# Temporary files
+*.tmp
+*.temp
+tmp/
+
+# Never commit real customer bills (PII)
+samples/
+*.pdf
+.netlify/
