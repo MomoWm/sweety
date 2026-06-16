@@ -44,3 +44,4 @@ tmp/
 # Never commit real customer bills (PII)
 samples/
 *.pdf
+.netlify/
