@@ -207,16 +207,15 @@ export default function App() {
   // The 3-free-presentations gate. Free presentations require an account so the
   // count is tracked server-side (clearing the browser cache can't reset it).
   async function handlePresent() {
-    if (!user || !session) {
-      setShowAuth(true);
-      return;
-    }
     if (profile?.is_pro) {
       setPresenting(true);
       return;
     }
-    // Server decides (monthly count enforced in Supabase, not the browser).
-    const r = await requestPresentation(session.access_token);
+    // If logged in, ask the server (monthly gate, enforced server-side).
+    // If not logged in (e.g. GitHub Pages / local dev), the API 401s and
+    // requestPresentation already fails-open → allowed:true.
+    const token = session?.access_token ?? "";
+    const r = await requestPresentation(token);
     if (r.allowed) {
       await refreshProfile();
       if (currentId) {
